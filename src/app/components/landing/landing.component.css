@@ -1,0 +1,42 @@
+/* landing.component.scss */
+.landing-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+  
+    .content {
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+  
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+  
+      .explore-btn {
+        background-color: #ff6f61;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #ff3b2e;
+        }
+      }
+    }
+  }
+  
