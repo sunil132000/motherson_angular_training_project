@@ -1,1 +1,107 @@
-<p>specification-dialog works!</p>
+<div class="product-specification">
+    <div *ngIf="product && product.length > 0; else noProductFound">
+      <div class="product-detail-container">
+        <!-- Left Column - Product Image -->
+        <div class="product-image-column">
+          <img [src]="product[0].product_image" alt="{{ product[0].product_name }}" class="product-image" />
+          
+          <!-- Thumbnail Gallery (optional) -->
+          <div class="thumbnail-gallery">
+            <div class="thumbnail active">
+              <img [src]="product[0].product_image" alt="Main view" />
+            </div>
+            <div class="thumbnail">
+              <img [src]="product[0].product_image" alt="Side view" />
+            </div>
+            <div class="thumbnail">
+              <img [src]="product[0].product_image" alt="Back view" />
+            </div>
+            <div class="thumbnail">
+              <img [src]="product[0].product_image" alt="Detail view" />
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Column - Product Details -->
+        <div class="product-info-column">
+          <div class="product-header">
+            <h2>{{ product[0].product_name }}</h2>
+            <p class="product-availability"
+              [ngClass]="{'in-stock': product[0].availability === 'In Stock', 'out-of-stock': product[0].availability !== 'In Stock'}">
+              {{ product[0].availability }}
+            </p>
+          </div>
+          
+          <div class="price-section">
+            <p class="product-price">${{ product[0].product_price }}</p>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star" *ngFor="let i of [1,2,3,4,5]"></i>
+              </div>
+              <span>{{ product[0].customer_reviews.length }} reviews</span>
+            </div>
+          </div>
+          
+          <div class="product-specs">
+            <div class="spec-item">
+              <span class="spec-label">Color:</span>
+              <span class="spec-value">{{ product[0].color }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Size:</span>
+              <span class="spec-value">{{ product[0].size }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Weight:</span>
+              <span class="spec-value">{{ product[0].weight }} kg</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Category:</span>
+              <span class="spec-value">{{ product[0].category }}</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Gender:</span>
+              <span class="spec-value">{{ product[0].gender }}</span>
+            </div>
+          </div>
+          
+          <div class="action-buttons">
+            <div class="quantity-selector">
+              <button class="qty-btn">-</button>
+              <input type="number" value="1" min="1" class="qty-input">
+              <button class="qty-btn">+</button>
+            </div>
+            <button class="add-to-cart-btn">
+              <i class="fas fa-shopping-cart"></i> Add to Cart
+            </button>
+            <button class="wishlist-btn">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
+          
+          <!-- Customer Reviews -->
+          <div class="customer-reviews">
+            <h3>Customer Reviews</h3>
+            <div class="review-item" *ngFor="let review of product[0].customer_reviews">
+              <div class="review-header">
+                <div class="review-stars">
+                  <i class="fas fa-star active" *ngFor="let i of [1,2,3,4,5].slice(0, review.rating)"></i>
+                  <i class="far fa-star" *ngFor="let i of [1,2,3,4,5].slice(review.rating)"></i>
+                </div>
+                <span class="review-date">March 15, 2025</span>
+              </div>
+              <p class="review-text">{{ review.comment }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <ng-template #noProductFound>
+      <div class="not-found-message">
+        <i class="fas fa-exclamation-circle"></i>
+        <p>Product not found. Please check the ID or try again later.</p>
+        <button class="return-btn">Return to Shop</button>
+      </div>
+    </ng-template>
+  </div>
