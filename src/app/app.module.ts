@@ -10,6 +10,7 @@ import { ReviewDialogComponent } from './components/product-detail/review-dialog
 import { LandingComponent } from './components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CommonModule } from '@angular/common';
     SpecificationDialogComponent,
     ReviewDialogComponent,
     LandingComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

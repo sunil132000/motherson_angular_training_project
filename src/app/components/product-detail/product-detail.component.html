@@ -1,46 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Store</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-
-<body>
-    <!-- Header Section -->
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo">
-                <h1>ShopNow</h1>
-            </div>
-
-            <div class="header-actions">
-                <div class="action-item">
-                    <a href="#" class="home-link">
-                        <i class="fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                </div>
-
-                <div class="action-item">
-                    <a href="#" class="cart-link">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Cart</span>
-                        <span class="cart-count">3</span>
-                    </a>
-                </div>
-
-                <div class="action-item">
-                    <a href="#" class="logout-link">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span>Logout</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <!-- Main Content Section -->
     <main class="main-content">
@@ -52,7 +10,7 @@
                 <!-- Availability Label -->
                 <span class="availability-label"
                     [ngClass]="{'in-stock': product.availability === 'In Stock', 'out-of-stock': product.availability !== 'In Stock'}">
-                    {{ product.availability }}
+                    {{ product.availability=='In Stock'?'In Stock':'Out of Stock' }}
                 </span>
 
                 <div class="product-info">
@@ -80,6 +38,3 @@
     </main>
 
 
-</body>
-
-</html>
