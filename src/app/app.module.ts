@@ -11,6 +11,10 @@ import { LandingComponent } from './components/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { LogOutPageComponent } from './components/log-out-page/log-out-page.component';
+import { NotifyMePageComponent } from './components/notify-me-page/notify-me-page.component';
+import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { HeaderComponent } from './components/header/header.component';
     ReviewDialogComponent,
     LandingComponent,
     HeaderComponent,
+    NotFoundPageComponent,
+    LogOutPageComponent,
+    NotifyMePageComponent,
+    CheckoutPageComponent,
   ],
   imports: [
     BrowserModule,

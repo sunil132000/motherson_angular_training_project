@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cart.model';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class CartService {
 
   private cartSubject = new BehaviorSubject<CartItem[]>(this.cart);
 
-  constructor() { }
+  constructor(private router :Router) { }
   addToCart(product: CartItem) {
     const existingProduct = this.cart.find(item => item.id === product.id);
     if (existingProduct) {
@@ -43,4 +44,5 @@ export class CartService {
       this.cartSubject.next(this.cart);
     }
   }
+
 }

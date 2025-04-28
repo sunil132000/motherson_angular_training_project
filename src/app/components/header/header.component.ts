@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.cartService.getCartItems().subscribe((cartItems: CartItem[]) => {
       this.cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-      console.log("Header count updated:", this.cartItemCount);
     });
   }
 }

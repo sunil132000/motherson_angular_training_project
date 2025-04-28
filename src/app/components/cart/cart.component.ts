@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CartItem } from "../../models/cart.model";
 import { CartService } from "../../services/cart.service";
+import { Route, Router } from "@angular/router";
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +12,8 @@ export class CartComponent implements OnInit {
   products: CartItem[] = [];
   
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private router : Router
   ) {}
   
   ngOnInit(): void {
@@ -40,4 +42,11 @@ export class CartComponent implements OnInit {
   removeItem(item: CartItem): void {
     this.cartService.removeFromCart(item.id);
   }
+
+addToCheckout() {
+  const productNames = this.products.map((item) => item.name); // Correct mapping of names
+  this.router.navigate(['/checkout'], { queryParams: { productNames: productNames.join(',') } });
+}
+
+ 
 }

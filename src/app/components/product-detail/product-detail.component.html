@@ -22,7 +22,7 @@
                     <p class="product-price">${{ product.product_price }}</p>
 
                     <!-- Notify Me Button (if out of stock) -->
-                    <button *ngIf="product.availability !== 'In Stock'" class="notify-btn">
+                    <button *ngIf="product.availability !== 'In Stock'" class="notify-btn" routerLink="/notifyMe">
                         <i class="far fa-bell"></i> Notify Me
                     </button>
 

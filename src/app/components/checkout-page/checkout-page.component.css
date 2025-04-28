@@ -1,0 +1,50 @@
+/* Basic styles for the checkout page */
+.checkout-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+  }
+  
+  .checkout-heading {
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .cart-description {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4CAF50;
+  }
+  
+  .product-list {
+    list-style-type: decimal; /* Changed to ordered list with numbers */
+    padding-left: 20px;
+  }
+  
+  .product-item {
+    font-size: 1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .product-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Additional styles for a cleaner design */
+  .product-list li {
+    padding-left: 10px;
+    color: #555;
+  }
+  
+  .checkout-container {
+    margin-top: 30px;
+  }
+  

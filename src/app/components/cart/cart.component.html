@@ -10,7 +10,7 @@
       
       <div class="quantity-control">
         <button class="qty-btn" (click)="decreaseQuantity(item)">-</button>
-        <!-- <input type="number" [(ngModel)]="item.quantity" min="1" class="qty-input"> -->
+        {{item.quantity}}
         <button class="qty-btn" (click)="increaseQuantity(item)">+</button>
       </div>
       
@@ -26,7 +26,7 @@
     <p>Shipping: $5.00</p>
     <hr>
     <h4>Grand Total: ${{ getSubtotal() + 5 }}</h4>
-    <button class="checkout-btn">Proceed to Checkout</button>
+    <button class="checkout-btn" (click)="addToCheckout()">Proceed to Checkout</button>
   </div>
 </div>
 
